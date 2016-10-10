@@ -1,32 +1,47 @@
 package tests;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
 import triangle.Triangle;
 
 public class Tests {
-	public static Triangle triangle0;
-	public static Triangle triangle1;
-	public static Triangle triangle2;
-	@Test
-	public void test(){
-		triangle0 = new Triangle(1,2,5);
-		triangle1= new Triangle(4,2,8);
-		triangle2 = new Triangle(5,1,3);
-	}
-	public void test_triangleArea(){
-		assertTrue(triangle0.triangleArea(1,2,5)==4);
-		assertTrue(triangle1.triangleArea(4,2,8)==7);
-		assertTrue(triangle2.triangleArea(5,1,4)==5);
-	}
-	public void test_trianglePerimeter(){
-		assertTrue(triangle0.trianglePerimeter(1,2,5)==8);
-		assertTrue(triangle1.trianglePerimeter(4,2,8)==14);
-		assertTrue(triangle2.trianglePerimeter(5,1,3)==9);
-	}
+	static Triangle triangle0;
+	static Triangle triangle1;
+	static Triangle triangle2;
+	static Triangle triangle3;
 	
+
+	@Test
+	public void test_Area(){
+		//True Tests
+		triangle0 = new Triangle();
+		assertTrue(triangle0.triangleArea(3,4,5)==6.0);
+		triangle1= new Triangle();
+		assertTrue(triangle1.triangleArea(5,5,2)== Math.sqrt(24));
+		//False Tests
+		triangle2 = new Triangle();
+		assertFalse(triangle2.triangleArea(2,3,4)==3.0);
+		triangle3 = new Triangle();
+		assertFalse(triangle2.triangleArea(2,3,4)==3.0);
+	}
+
+	public void test_trianglePerimeter(){
+		//True Tests
+		triangle0 = new Triangle();
+		assertTrue(triangle0.trianglePerimeter(3,4,5)==12.0);
+		triangle1= new Triangle();
+		assertTrue(triangle1.trianglePerimeter(5,5,2)== 12.0);
+		
+		//False Tests
+		triangle2 = new Triangle();
+		assertFalse(triangle2.trianglePerimeter(2,3,4)==10.0);
+		triangle3 = new Triangle();
+		assertFalse(triangle2.trianglePerimeter(2,3,4)==9.0);
+	}
+
+
 	
 
 }
