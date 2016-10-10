@@ -26,9 +26,6 @@ public class Triangle extends Exception{
 			this.side3=side3;
 			
 		}
-
-
-		
 		//Setters & Getters
 		public double getSide1() {
 			return side1;
